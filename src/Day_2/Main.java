@@ -69,7 +69,6 @@ public class Main {
                 count = B[i];
             }
         }
-
         return count;
     }
 
