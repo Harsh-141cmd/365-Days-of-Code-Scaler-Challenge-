@@ -32,40 +32,42 @@ Example Explanation
 
  */
 
-package Day_1;
+
+package Greedy_Algorithms;
 
 import java.util.Scanner;
-public class Main {
-    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
-    public int majorityElement(final int[] A) {
-        int N = A.length;
 
-        for(int i=0; i<N; i++) {
-            int count = 0;
-            for(int j=0; j<N; j++) {
-                if(A[i] == A[j]) {
-                    count++;
-                }
-            }
-            if(count > N/2) {
-                return A[i];
+public class Majority_Element {public int majorityElement(final int[] A) {
+    int N = A.length;
+
+    for(int i=0; i<N; i++) {
+        int count = 0;
+        for(int j=0; j<N; j++) {
+            if(A[i] == A[j]) {
+                count++;
             }
         }
-        return -1;
+        if(count > N/2) {
+            return A[i];
+        }
     }
+    return -1;
+}
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
         System.out.print("Enter the number of elements in the array: ");
-        int n = scanner.nextInt();
+        int n = sc.nextInt();
         int[] array = new int[n];
         System.out.println("Enter the elements of the array:");
         for (int i = 0; i < n; i++) {
-            array[i] = scanner.nextInt();
+            array[i] = sc.nextInt();
         }
-        Main main = new Main();
+        Majority_Element main = new Majority_Element();
         int result = main.majorityElement(array);
         System.out.println("Majority Element: " + result);
-        scanner.close();
     }
 }
+
+// Time Complexity: O(n^2)
+// Space Complexity: O(1)

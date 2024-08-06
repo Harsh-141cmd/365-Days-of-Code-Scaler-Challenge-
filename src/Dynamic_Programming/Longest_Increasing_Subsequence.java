@@ -42,11 +42,12 @@ Explanation 2:
  The possible longest increasing subsequences: [0, 2, 6, 9, 13, 15] or [0, 4, 6, 9, 11, 15] or [0, 4, 6, 9, 13, 15]
  */
 
-package Day_2;
+
+package Dynamic_Programming;
 
 import java.util.Scanner;
-public class Main {
-    // DO NOT MODIFY THE ARGUMENTS WITH "final" PREFIX. IT IS READ ONLY
+
+public class Longest_Increasing_Subsequence {
     public int lis(final int[] A) {
         int N = A.length;
         int B[] = new int[N];
@@ -72,18 +73,19 @@ public class Main {
         return count;
     }
 
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter the number of elements in the array: ");
-        int n = scanner.nextInt();
-        int[] array = new int[n];
-        System.out.println("Enter the elements of the array:");
-        for (int i = 0; i < n; i++) {
-            array[i] = scanner.nextInt();
-        }
-        Main solution = new Main();
-        int result = solution.lis(array);
-        System.out.println("Length of the longest increasing subsequence: " + result);
-        scanner.close();
-    }
+
+     public static void main(String[] args) {
+         Longest_Increasing_Subsequence longestIncreasingSubsequence = new Longest_Increasing_Subsequence();
+         Scanner sc = new Scanner(System.in);
+         System.out.print("Enter the number of elements in the array: ");
+         int n = sc.nextInt();
+         int[] array = new int[n];
+         System.out.println("Enter the elements of the array:");
+         for (int i = 0; i < n; i++) {
+             array[i] = sc.nextInt();
+         }
+         int result = longestIncreasingSubsequence.lis(array);
+         System.out.println("Length of the longest increasing subsequence: " + result);
+     }
 }
+
